@@ -11,4 +11,9 @@ class PostController extends Controller
             //blade内で使う変数'posts'と設定。'posts'の中身にgetを使い、インスタンス化した$postを代入。
             //getPaginateByLimit()はPost.phpで定義したメソッドです。
         }
+        public function show(Post $post)
+        {
+            return view('posts.show')->with(['post' => $post]);
+        //'post'はbladeファイルで使う変数。中身は$postはid=1のPostインスタンス。
+        }
 }
