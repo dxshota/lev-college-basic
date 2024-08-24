@@ -7,8 +7,9 @@
     </head>
     <body class = "body">
         <h1>ブログ投稿一覧</h1>
+        <a href='/posts/create'>投稿</a>
         @foreach ($posts as $post)
-            <div class = 'posts'>
+            <div class = 'posts'> <!-- class属性posts -->
                 <h2 class = 'title'>
                 <a href="/posts/{{ $post->id }}">{{ $post->title }}</a>
                 </h2>                
@@ -17,6 +18,7 @@
         @endforeach
         <div class='paginate'>
             {{ $posts->links() }}
-        </div>        
+        </div>
+                
     </body>
 </html>

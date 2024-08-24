@@ -14,6 +14,9 @@ use App\Http\Controllers\PostController; //appにするとエラー,Appか確認
 */
 
 Route::get('/', [PostController::class, 'index']);
+Route::get('/posts/create', [PostController::class, 'create']); //必ずRoute::get('/posts/{post}', [PostController::class,'show']);の上に書く
+Route::post('/posts', [PostController::class, 'store']); //保存ボタン押下された時のルーティング
 Route::get('/posts/{post}', [PostController::class, 'show']);
+
 // '/posts/{対象データのID}'にGetリクエストが来たら、PostControllerのshowメソッドを実行する
 //ルートパラメータは関数の引数の変数と一致した名前にする
