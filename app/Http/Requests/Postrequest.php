@@ -20,7 +20,7 @@ class Postrequest extends FormRequest
     {
         return [
             'post.title' => 'required|string|max:100', //書式：'キー名' => 'ルール1|ルール2|ルール3'
-            'post.body' => 'required|string|max4000',  //キー名はHTML上Formのname属性。post[title]など入れ子になっている場合は.（ドット）で繋ぎます。
+            'post.body' => 'required|string|max:4000',  //キー名はHTML上Formのname属性。post[title]など入れ子になっている場合は.（ドット）で繋ぎます。
         ];
     }
 }
