@@ -41,4 +41,10 @@ class PostController extends Controller
                                             //ill/saveを利用することで、全データを無条件で更新するのではなく、差分がある場合のみDBを更新する
             return redirect('/posts/' . $post->id);
         }
+
+        public function delete(Post $post)
+        {
+            $post->delete();
+            return redirect('/');
+        }
 }
